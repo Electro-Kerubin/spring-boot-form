@@ -2,6 +2,7 @@ package com.nerfilin.springboot.form.app.models.domain;
 
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
@@ -49,8 +50,8 @@ public class Usuario {
 	//@DateTimeFormat(pattern = "yyyy-MM-dd") sirve para cambiar el formato del campo date
 	private Date fechaNacimiento;
 	
-	@NotEmpty
-	private String pais;
+	@Valid
+	private Pais pais;
 
 	public String getUsernameTest() {
 		return usernameTest;
@@ -116,11 +117,11 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 
